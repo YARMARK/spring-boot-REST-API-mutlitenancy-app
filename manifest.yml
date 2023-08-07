@@ -1,0 +1,28 @@
+applications:
+  - name: springBtp
+    random-route: true
+    path: ./target/SpringBtp-0.0.1-SNAPSHOT.jar
+    memory: 1024M
+    buildpacks:
+      - sap_java_buildpack
+    env:
+      TARGET_RUNTIME: tomcat
+      JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+    services:
+      - springXsuaa
+
+  - name: web
+    random-route: true
+    path: web
+    memory: 1024M
+    env:
+      destinations: >
+        [
+          {
+            "name":"springBtp",
+            "url":"https://springBtp-nice-antelope-dq.cfapps.us10-001.hana.ondemand.com/",
+            "forwardAuthToken": true
+          }
+        ]
+    services:
+      - springXsuaa

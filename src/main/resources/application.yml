@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: springBtp
+server:
+  port: 8082
