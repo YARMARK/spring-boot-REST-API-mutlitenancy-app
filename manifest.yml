@@ -3,28 +3,33 @@ applications:
     routes:
       - route: springBtp-nice-antelope-dq.cfapps.us10-001.hana.ondemand.com
     path: ./target/SpringBtp-0.0.1-SNAPSHOT.jar
-    memory: 1024M
+    memory: 512M
     buildpacks:
       - sap_java_buildpack
+    JBP_CONFIG_JAVA_OPTS: "[java_opts: '-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n,onjcmd=y']"
     env:
       TARGET_RUNTIME: tomcat
       JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jre.SAPMachineJRE']"
+      JBP_CONFIG_SAP_MACHINE_JDK: "[default_debug_agent_active: true]"
       JBP_CONFIG_DEBUG: '{enabled: true}'
     services:
       - springXsuaa
+      - springBtp-saas-registry
 
-  - name: web
-    random-route: true
-    path: web
-    memory: 1024M
+  - name: approuter
+    routes:
+      - route: approuter-reflective-chipmunk-lq.cfapps.us10-001.hana.ondemand.com
+    path: approuter
+    memory: 128M
+    services:
+      - springXsuaa
     env:
       destinations: >
         [
           {
             "name":"springBtp",
-            "url":"https://springBtp-nice-antelope-dq.cfapps.us10-001.hana.ondemand.com/",
+            "url":"https://springBtp-nice-antelope-dq.cfapps.us10-001.hana.ondemand.com",
             "forwardAuthToken": true
           }
         ]
-    services:
-      - springXsuaa
+      TENANT_HOST_PATTERN: "^(.*)-approuter-reflective-chipmunk-lq.cfapps.us10-001.hana.ondemand.com"

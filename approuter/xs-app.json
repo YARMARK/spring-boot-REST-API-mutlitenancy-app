@@ -1,0 +1,11 @@
+{
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/springBtp/(.*)$",
+      "target": "$1",
+      "destination": "springBtp",
+      "authenticationType": "xsuaa"
+    }
+  ]
+}

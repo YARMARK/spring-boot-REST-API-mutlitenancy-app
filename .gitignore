@@ -31,4 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
-/web/node_modules/
+/approuter/node_modules/

@@ -1,9 +1,0 @@
-{
-  "routes": [
-    {
-      "source": "^/springBtp/(.*)$",
-      "target": "$1",
-      "destination": "springBtp"
-    }
-  ]
-}

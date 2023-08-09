@@ -1,0 +1,9 @@
+{
+  "xsappname":"springBtp",
+  "appUrls": {
+    "onSubscription" : "https://springBtp-nice-antelope-dq.cfapps.us10-001.hana.ondemand.com/callback/v1.0/tenants/{tenantId}"
+  },
+  "displayName" : "Spring-Btp MTA",
+  "description" : "Spring-Btp MTA sample application",
+  "category" : "Custom SaaS Applications"
+}
