@@ -1,5 +1,32 @@
 spring:
   application:
     name: springBtp
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+  datasource:
+    driver-class-name:
+    username: ${vcap.services.my-db.credentials.username}
+    password: ${vcap.services.my-db.credentials.password}
+    url: jdbc:postgresql://${vcap.services.my-db.credentials.hostname}:${vcap.services.my-db.credentials.port}/${vcap.services.my-db.credentials.dbname}
+  liquibase:
+    change-log: classpath:changelog/db.changelog-master.yml
+  jackson:
+    default-property-inclusion: non_null
+multitenant:
+  defaultTenant: public
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - beans
+          - health
+          - httptrace
 server:
   port: 8082

@@ -13,7 +13,7 @@ applications:
       JBP_CONFIG_SAP_MACHINE_JDK: "[default_debug_agent_active: true]"
       JBP_CONFIG_DEBUG: '{enabled: true}'
     services:
-      - springXsuaa
+      - spring-xsuaa
       - springBtp-saas-registry
 
   - name: approuter
@@ -22,7 +22,7 @@ applications:
     path: approuter
     memory: 128M
     services:
-      - springXsuaa
+      - spring-xsuaa
     env:
       destinations: >
         [

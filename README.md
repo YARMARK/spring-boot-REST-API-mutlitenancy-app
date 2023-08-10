@@ -62,8 +62,38 @@ Foundry Platform.
           * Client ID = CLIENT_ID
           * Client Secret = CLIENT_SECRET
           * Scope = SCOPE
+       
+## [Add Multi-tenancy](https://developers.sap.com/tutorials/cp-cf-security-xsuaa-multi-tenant.html)
+https://blogs.sap.com/2021/12/24/multitenancy-develop-and-register-multitenant-application-to-the-sap-saas-provisioning-service-in-cloud-foundry/
+### Add SaaS-registry
 
-   
+1. Create config.json for Saas-registry:
 
+   {
+   "xsappname":"application",
+   "appUrls": {
+   "onSubscription" : "https://application.cfapps.eu10.hana.ondemand.com/callback/v1.0/tenants/{tenantId}"
+   },
+   "displayName" : "Application MTA",
+   "description" : "Application MTA sample application",
+   "category" : "Custom SaaS Applications"
+   }.
 
-   
+2. Make some changes in xs-security.json:
+   * tenant-mode: shared
+   * oauth2-configuration: {
+     "token-validity": 86400,
+     "refresh-token-validity": 2592000,
+     "redirect-uris": [
+     "https://*.cfapps.us10-001.hana.ondemand.com/**"
+     ]
+     }
+
+3. Unbind and delete xsuaa service:
+   * cf unbind-service <app_name> <xsuaa_service_name>
+   * cf unbind-service <approuter_name> <xsuaa_service_name>
+   * cf delete-service <xsuaa_service_name>
+
+4. Create xsuaa instance:
+   * cf create-service xsuaa application <xsuaa_service_name> -c xsuaa/xs-security.json
+   * cf create-service saas-registry application <saas-registry_name> -c saas-config/config.json
