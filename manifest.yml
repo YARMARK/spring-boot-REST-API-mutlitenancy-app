@@ -3,24 +3,25 @@ applications:
     routes:
       - route: springBtp-nice-antelope-dq.cfapps.us10-001.hana.ondemand.com
     path: ./target/SpringBtp-0.0.1-SNAPSHOT.jar
-    memory: 512M
+    memory: 500M
     buildpacks:
       - sap_java_buildpack
     JBP_CONFIG_JAVA_OPTS: "[java_opts: '-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n,onjcmd=y']"
     env:
       TARGET_RUNTIME: tomcat
       JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jre.SAPMachineJRE']"
-      JBP_CONFIG_SAP_MACHINE_JDK: "[default_debug_agent_active: true]"
+      JBP_CONFIG_SAP_MACHINE_JDK: "[default_debug_agent_active: false]"
       JBP_CONFIG_DEBUG: '{enabled: true}'
     services:
       - spring-xsuaa
       - springBtp-saas-registry
+      - my-db
 
   - name: approuter
     routes:
       - route: approuter-reflective-chipmunk-lq.cfapps.us10-001.hana.ondemand.com
     path: approuter
-    memory: 128M
+    memory: 256M
     services:
       - spring-xsuaa
     env:

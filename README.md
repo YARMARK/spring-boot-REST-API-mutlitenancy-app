@@ -69,6 +69,7 @@ https://blogs.sap.com/2021/12/24/multitenancy-develop-and-register-multitenant-a
 
 1. Create config.json for Saas-registry:
 
+```
    {
    "xsappname":"application",
    "appUrls": {
@@ -77,17 +78,20 @@ https://blogs.sap.com/2021/12/24/multitenancy-develop-and-register-multitenant-a
    "displayName" : "Application MTA",
    "description" : "Application MTA sample application",
    "category" : "Custom SaaS Applications"
-   }.
+   }
+```
 
 2. Make some changes in xs-security.json:
-   * tenant-mode: shared
-   * oauth2-configuration: {
+```
+   tenant-mode: shared
+   oauth2-configuration: {
      "token-validity": 86400,
      "refresh-token-validity": 2592000,
      "redirect-uris": [
      "https://*.cfapps.us10-001.hana.ondemand.com/**"
      ]
      }
+```
 
 3. Unbind and delete xsuaa service:
    * cf unbind-service <app_name> <xsuaa_service_name>
@@ -97,3 +101,45 @@ https://blogs.sap.com/2021/12/24/multitenancy-develop-and-register-multitenant-a
 4. Create xsuaa instance:
    * cf create-service xsuaa application <xsuaa_service_name> -c xsuaa/xs-security.json
    * cf create-service saas-registry application <saas-registry_name> -c saas-config/config.json
+
+## [Tenant-Aware Persistency](https://blogs.sap.com/2017/12/20/deep-dive-6-with-sap-s4hana-cloud-sdk-extend-your-cloud-foundry-application-with-tenant-aware-persistency/)
+
+   ### [Spring-Boot-REST-API-Mutlitenancy-App](https://github.com/Ragimzade/Spring-Boot-REST-API-Mutlitenancy-App) - Multitenancy Sap Btp
+   ### [Spring-Boot-REST-API-Mutlitenancy-App-MTA](https://github.com/SergeichykAndrei/btpapp/tree/master) -  Multitenancy Sap Btp (MTA.yml)
+
+## Remote Debug
+### Links
+  * [Debugging Java Web Applications on SAP Business Technology Platform](https://help.sap.com/docs/btp/sap-business-technology-platform/debug-java-web-application-running-on-sapmachine?locale=en-US)
+  * [Remote debug on CloudFoundry](https://blogs.sap.com/2019/07/24/remote-debugging-on-cloud-foundry/)
+
+### Debug by hand:
+1. Login to Cloud Foundry:
+```
+cf login -a https://api.cf.sap.hana.ondemand.com (Canary Landscape).
+```
+2. Navigate to your space where your application is deployed
+```
+cf target -o <organisation name> -s <space name>
+```
+3. Enable ssh-tunnel for the application:
+```
+cf enable-ssh <application name>
+```
+4. Restage your application:
+```
+cf restage <application name>
+```
+6. Open ssh-tunnel:
+```
+cf ssh <app_name>
+```
+7. Run this command:
+```
+app/META-INF/.sap_java_buildpack/sap_machine_jre/bin/jcmd 7 VM.start_java_debugging
+exit
+```
+8. After successfully restaging the application run the below command
+```
+cf ssh -N -T -L 8000:localhost:8000 <application name>
+```
+10. [Config remote debug configuration](https://blogs.sap.com/2019/07/24/remote-debugging-on-cloud-foundry/)
