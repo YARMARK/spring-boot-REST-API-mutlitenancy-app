@@ -58,13 +58,13 @@ Foundry Platform.
      * Insert link of the request (https://api.cfapps.us10-001.hana.ondemand.com/getBook)
      * In Authorization tab select OAUTH 2.0 :
           * Grant Type: 'Password credential'
-          * Access Token URL = ACCESS_TOKEN_URL
+          * Access Token URL = ACCESS_TOKEN_URL/oauth/token
           * Client ID = CLIENT_ID
           * Client Secret = CLIENT_SECRET
           * Scope = SCOPE
        
 ## [Add Multi-tenancy](https://developers.sap.com/tutorials/cp-cf-security-xsuaa-multi-tenant.html)
-https://blogs.sap.com/2021/12/24/multitenancy-develop-and-register-multitenant-application-to-the-sap-saas-provisioning-service-in-cloud-foundry/
+   * [Add Multi-tenancy (2)] (https://blogs.sap.com/2021/12/24/multitenancy-develop-and-register-multitenant-application-to-the-sap-saas-provisioning-service-in-cloud-foundry/)
 ### Add SaaS-registry
 
 1. Create config.json for Saas-registry:
@@ -101,6 +101,9 @@ https://blogs.sap.com/2021/12/24/multitenancy-develop-and-register-multitenant-a
 4. Create xsuaa instance:
    * cf create-service xsuaa application <xsuaa_service_name> -c xsuaa/xs-security.json
    * cf create-service saas-registry application <saas-registry_name> -c saas-config/config.json
+
+5.Create Rout for consumer subaccount:
+   * cf map-route <aprouter_name> cfapps.us10-001.hana.ondemand.com --hostname consumer-tenant-ap25-approuter-product-list-ap25
 
 ## [Tenant-Aware Persistency](https://blogs.sap.com/2017/12/20/deep-dive-6-with-sap-s4hana-cloud-sdk-extend-your-cloud-foundry-application-with-tenant-aware-persistency/)
 
@@ -143,3 +146,35 @@ exit
 cf ssh -N -T -L 8000:localhost:8000 <application name>
 ```
 10. [Config remote debug configuration](https://blogs.sap.com/2019/07/24/remote-debugging-on-cloud-foundry/)
+
+## Locally connection to Cloud Foundry PSQL instance 
+
+1. Enable ssh-tunnel for the application:
+```
+cf enable-ssh <application name>
+```
+
+2. Create a service key for your service instance using the cf create-service-key command:
+```
+cf create-service-key MY-DB EXTERNAL-ACCESS-KEY
+```
+
+3. Retrieve your new service key using the cf service-key command:
+    NOTE: 
+     * dbname;
+     * hostname;
+     * port;
+     * username;
+```
+cf service-key MY-DB EXTERNAL-ACCESS-KEY
+```
+
+4. Configure your SSH tunnel:
+    * 63305 - any available local port
+    * port, hostname - from previous step
+```
+cf ssh -L 63305:<hostname>:port <app_name>
+```
+
+5. ![Access connection in IntelliJ Idea](image/dbCfg.png)
+ 
