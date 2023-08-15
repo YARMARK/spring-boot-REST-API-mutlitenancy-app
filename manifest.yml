@@ -10,12 +10,13 @@ applications:
     env:
       TARGET_RUNTIME: tomcat
       JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jre.SAPMachineJRE']"
-      JBP_CONFIG_SAP_MACHINE_JDK: "[default_debug_agent_active: true]"
+      JBP_CONFIG_SAP_MACHINE_JDK: "[default_debug_agent_active: false]"
       JBP_CONFIG_DEBUG: '{enabled: true}'
     services:
       - spring-xsuaa
       - springBtp-saas-registry
       - my-db
+      - springBtp-log
 
   - name: approuter
     routes:
