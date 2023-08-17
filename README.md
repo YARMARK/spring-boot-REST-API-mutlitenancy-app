@@ -177,4 +177,24 @@ cf ssh -L 63305:<hostname>:port <app_name>
 ```
 
 5. ![Access connection in IntelliJ Idea](image/dbCfg.png)
- 
+
+## MTA
+  * Install the MultiApps CF CLI Plugin:
+  > cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org
+  > cf install-plugin multiapps
+  * Deploy the MTA:
+  > cd "path_tp_mta"
+  > cf deploy ./
+  * To check the application, execute:
+  > cf apps
+  * To check the service, execute:
+  > cf services
+
+[Difference between manifest.yml and mta.yml](https://answers.sap.com/questions/12689412/cloud-foundry-difference-between-mtayaml-and-manif.html)
+[MTA file syntax](https://help.sap.com/docs/SAP_HANA_PLATFORM/4505d0bdaf4948449b7f7379d24d0f0d/4050fee4c469498ebc31b10f2ae15ff2.html#resources)
+[Deploy Multitarget Application](https://developers.sap.com/tutorials/btp-cf-deploy-mta.html)
+
+## Helpful Links
+
+  * [Fundamentals of Multitenancy in SAP BTP](https://blogs.sap.com/2022/08/27/fundamentals-of-multitenancy-in-sap-btp/)
+  * [SAP BTP – Security – OAuth 2.0 – Understanding Token Exchange](https://blogs.sap.com/2022/02/22/sap-btp-security-oauth-2.0-understanding-token-exchange/)

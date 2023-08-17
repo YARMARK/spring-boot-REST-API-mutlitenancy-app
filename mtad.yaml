@@ -1,0 +1,108 @@
+_schema-version: '3.1'
+version: 1.0.0
+ID: springBtp-multitenant-application
+
+modules:
+  - name: springBtp-app
+    type: java
+    path: ./target/SpringBtp-0.0.1-SNAPSHOT.jar
+    parameters:
+      memory: 500M
+      keep-existing-routes: true
+    provides:
+      - name: springBtp-app
+        properties:
+          springBtp-url: '${default-url}'
+    properties:
+      buildpack: sap_java_buildpack
+      JBP_CONFIG_JAVA_OPTS: "[java_opts: '-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n,onjcmd=y']"
+      TARGET_RUNTIME: tomcat
+      JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jre.SAPMachineJRE']"
+      JBP_CONFIG_SAP_MACHINE_JDK: "[default_debug_agent_active: false]"
+      JBP_CONFIG_DEBUG: '{enabled: true}'
+    requires:
+      - name: my-db
+      - name: springBtp-log
+      - name: spring-xsuaa
+      - name: springBtp-saas-registry
+
+  - name: approuter
+    type: nodejs
+    path: approuter
+    parameters:
+      memory: 256M
+      keep-existing-routes: true
+    provides:
+      - name: approuter-api
+        properties:
+          approuter_url: ${default-url}
+          application: ${app-name}
+    requires:
+      - name: springBtp-app
+        group: destinations
+        properties:
+          name: springBtp-app
+          url: ~{springBtp-url}
+          forwardAuthToken: true
+      - name: spring-xsuaa
+    properties:
+      TENANT_HOST_PATTERN: '^(.*)-approuter-xv.${default-domain}'
+
+resources:
+  - name: my-db
+    type: org.cloudfoundry.existing-service
+
+  - name: springBtp-log
+    type: org.cloudfoundry.existing-service
+
+  - name: spring-xsuaa
+    type: org.cloudfoundry.managed-service
+    requires:
+      - name: approuter-api
+    properties:
+      XSAPPNAME: ${xsuaa-app}
+    parameters:
+      service: xsuaa
+      service-plan: application
+      shared: true
+      xsuaa-app: ${space}-~{approuter-api/application}
+    config:
+      xsappname: ${xsuaa-app}
+      tenant-mode: shared
+      description: Security profile of called application
+      scopes:
+        - name: "$XSAPPNAME.Callback"
+          description: With this scope set, the callbacks for tenant onboarding, offboarding and getDependencies can be called.
+          grant-as-authority-to-apps:
+            - "$XSAPPNAME(application,sap-provisioning,tenant-onboarding)"
+        - name: "$XSAPPNAME.Display"
+          description: Display content
+        - name: "$XSAPPNAME.read"
+          description: With this scope, USER can read products.
+      role-templates:
+        - name: Viewer
+          description: View content
+          scope-references:
+            - "$XSAPPNAME.Display"
+      oauth2-configuration:
+        redirect-uris:
+          - "http*://*.${default-domain}/**"
+
+  - name: springBtp-saas-registry
+    type: org.cloudfoundry.managed-service
+    requires:
+      - name: spring-xsuaa
+      - name: springBtp-app
+    parameters:
+      service: saas-registry
+      service-plan: application
+    config:
+      xsappname: ~{spring-xsuaa/XSAPPNAME}
+      appName: springBtp-app
+      displayName: Spring-Btp MTA
+      description: 'Spring-Btp MTA sample application'
+      category: 'Custom SaaS Applications'
+      appUrls:
+        onSubscription: ~{springBtp-app/springBtp-url}/callback/v1.0/tenants/{tenantId}
+        onSubscriptionAsync: false
+        onUnSubscriptionAsync: false
