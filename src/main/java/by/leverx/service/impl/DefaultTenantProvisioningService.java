@@ -49,14 +49,12 @@ public class DefaultTenantProvisioningService implements TenantProvisioningServi
         statement.execute(String.format("CREATE SCHEMA IF NOT EXISTS \"%s\"", schemaName));
         connection.commit();
 
-        defaultSchemaName = database.getDefaultSchemaName();
         database.setDefaultSchemaName(schemaName);
 
         final Liquibase liquibase = new liquibase.Liquibase(LIQUIBASE_PATH,
             new ClassLoaderResourceAccessor(), database);
 
         liquibase.update(new Contexts(), new LabelExpression());
-        database.setDefaultSchemaName(defaultSchemaName);
       }
 
     } catch (SQLException | LiquibaseException | IllegalArgumentException e) {
