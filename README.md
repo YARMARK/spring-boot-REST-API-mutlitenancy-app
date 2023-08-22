@@ -190,14 +190,15 @@ cf ssh -N -T -L 8000:localhost:8000 <application name>
 ```
 cf enable-ssh <application name>
 ```
+3. Restart your app
 
-2. Create a service key for your service instance using the cf create-service-key command:
+4. Create a service key for your service instance using the cf create-service-key command:
 
 ```
 cf create-service-key MY-DB EXTERNAL-ACCESS-KEY
 ```
 
-3. Retrieve your new service key using the cf service-key command:
+5. Retrieve your new service key using the cf service-key command:
    NOTE:
     * dbname;
     * hostname;
@@ -208,7 +209,7 @@ cf create-service-key MY-DB EXTERNAL-ACCESS-KEY
 cf service-key MY-DB EXTERNAL-ACCESS-KEY
 ```
 
-4. Configure your SSH tunnel:
+6. Configure your SSH tunnel:
     * 63305 - any available local port
     * port, hostname - from previous step
 
@@ -238,6 +239,15 @@ You can parse your token by [JWT.io](https://jwt.io), and check "x-zid" section 
 </details>
 
 ## MTA
+
+If you already had previously deployed services and applications, clean them up before starting the MTA deployment in the following order:
+
+  * delete subaccounts
+  * delete regestry-service
+  * delete approuter and reporting applications
+  * delete xsuaa service
+
+## Deploy
 
 * Install the MultiApps CF CLI Plugin:
 

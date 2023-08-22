@@ -20,7 +20,7 @@ import org.springframework.web.context.annotation.RequestScope;
 @RequestMapping(path = "/callback/v1.0/tenants")
 public class CallbackController {
 
-  private static final String APPROUTER_DOMAIN = "-approuter-reflective-chipmunk-lq.cfapps.us10-001.hana.ondemand.com";
+  private static final String APPROUTER_DOMAIN = "-613633eatrial-dev-approuter.cfapps.us10-001.hana.ondemand.com";
   private static final String HTTPS = "https://";
   private static final String SUBDOMAIN_KEY ="subscribedSubdomain";
   private final DefaultTenantProvisioningService defaultTenantProvisioningService;

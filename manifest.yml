@@ -1,7 +1,7 @@
 applications:
   - name: springBtp
     routes:
-      - route: springBtp-nice-antelope-dq.cfapps.us10-001.hana.ondemand.com
+      - route: 613633eatrial-dev-springbtp.cfapps.us10-001.hana.ondemand.com
     path: ./target/SpringBtp-0.0.1-SNAPSHOT.jar
     memory: 500M
     buildpacks:
@@ -30,8 +30,8 @@ applications:
         [
           {
             "name":"springBtp",
-            "url":"https://springBtp-nice-antelope-dq.cfapps.us10-001.hana.ondemand.com",
+            "url":"https://613633eatrial-dev-springbtp.cfapps.us10-001.hana.ondemand.com",
             "forwardAuthToken": true
           }
         ]
-      TENANT_HOST_PATTERN: "^(.*)-approuter-reflective-chipmunk-lq.cfapps.us10-001.hana.ondemand.com"
+      TENANT_HOST_PATTERN: "^(.*)-613633eatrial-dev-approuter.cfapps.us10-001.hana.ondemand.com"
