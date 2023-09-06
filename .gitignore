@@ -32,3 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 /approuter/node_modules/
+/mta-op-1b420e30-40eb-11ee-90a8-eeee0a82ff2c/
+/mta-op-09d098dc-3cfa-11ee-89d7-eeee0a8f2ad8/
+/springBtp-multitenant-application.mtar

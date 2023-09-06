@@ -1,0 +1,1610 @@
+---
+modelFingerprint: "2ED7D02ADCF3A1CF52BE80EFF94C180D"
+methods:
+- method:
+    name: "getSubscriber"
+    returnType: "by.leverx.model.SubscriberEntity"
+    signature: "getSubscriber(java.lang.Long) : by.leverx.model.SubscriberEntity"
+    instructionFingerprint: "B46C179EFC969CBA2EE128C40CF605D7"
+    parametersTypes:
+    - "java.lang.Long"
+  paths:
+  - pathId: "path1"
+    pathIdForUser: "path1"
+    testPathName: "getSubscriberWhenByIdIsPresent"
+    nameDefinedByUser: false
+    constructorSignature: "<init>(by.leverx.repository.SubscriberRepository) : void"
+    priorityDefinedByUser: false
+    filledByUser: false
+    priority: "LOW"
+    modelFingerprint: "6BA4A2D2716E4FDC58174DC39BBA3228"
+    problemWasSolvedByProver: true
+    truncated: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "5E5340B40EEEB5CF6F441CBF593F91E5"
+      index: 1
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.service.impl.SubscriberServiceImpl"
+          parameters:
+          - name: "repository"
+            value:
+              sapientType: "MOCK"
+              valueType: "by.leverx.repository.SubscriberRepository"
+              uuid: "<init>_subscriberRepository1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "by.leverx.service.impl.SubscriberServiceImpl"
+        uuid: "target"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "INPUT"
+      name: "id"
+      modelFingerprint: "C66675FDCB8DECE3D3C375C96E389AB2"
+      index: 2
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "BASIC"
+        content: !<regular>
+          value: 0
+        valueType: "java.lang.Long"
+        uuid: "getSubscriber_long1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "FIELD"
+      name: "repository"
+      modelFingerprint: "2F38B6801BD3D242F2ACAD64E765BB98"
+      index: 3
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.repository.SubscriberRepository"
+        uuid: "<init>_subscriberRepository1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "this.repository"
+        name: "findById"
+        parameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 0
+            valueType: "java.lang.Long"
+            uuid: "getSubscriber_long1"
+            fixed: false
+            equalsMethodPresent: false
+            explicitCastNeeded: false
+        signature: "findById(Long): Optional"
+        returnValue:
+          sapientType: "OPTIONAL"
+          content: !<optional>
+            value:
+              sapientType: "MOCK"
+              valueType: "by.leverx.model.SubscriberEntity"
+              uuid: "getSubscriber_object1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: true
+            target: "java.util.Optional"
+          valueType: "java.util.Optional"
+          genericValueType: "by.leverx.model.SubscriberEntity"
+          uuid: "getSubscriber_optional1"
+          fixed: false
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1025
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "1146BEC45388470DC1C042765ED0E9EB"
+      index: 4
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.model.SubscriberEntity"
+        uuid: "getSubscriber_object1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: true
+      staticReadMethodForField: false
+      filledByUser: false
+    uuid: "0f1d4174-96fb-3429-bd06-6695142c74da"
+    deleted: false
+    disabled: false
+    ignoredBySystem: false
+    lastExecutionStatus: "PASSED"
+  - pathId: "path2"
+    pathIdForUser: "path2"
+    testPathName: "getSubscriberWhenByIdNotIsPresentThrowsRuntimeException"
+    nameDefinedByUser: false
+    constructorSignature: "<init>(by.leverx.repository.SubscriberRepository) : void"
+    priorityDefinedByUser: false
+    filledByUser: false
+    priority: "LOW"
+    modelFingerprint: "C74114D391404613002D9E6710414962"
+    problemWasSolvedByProver: true
+    truncated: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "5E5340B40EEEB5CF6F441CBF593F91E5"
+      index: 1
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.service.impl.SubscriberServiceImpl"
+          parameters:
+          - name: "repository"
+            value:
+              sapientType: "MOCK"
+              valueType: "by.leverx.repository.SubscriberRepository"
+              uuid: "<init>_subscriberRepository1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "by.leverx.service.impl.SubscriberServiceImpl"
+        uuid: "target"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "INPUT"
+      name: "id"
+      modelFingerprint: "C66675FDCB8DECE3D3C375C96E389AB2"
+      index: 2
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "BASIC"
+        content: !<regular>
+          value: 1
+        suggestedContent: !<regular>
+          value: 1
+        valueType: "java.lang.Long"
+        uuid: "getSubscriber_long1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "FIELD"
+      name: "repository"
+      modelFingerprint: "3499810E51AAA58818F3052BBAD82880"
+      index: 3
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.repository.SubscriberRepository"
+        uuid: "<init>_subscriberRepository1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "this.repository"
+        name: "findById"
+        parameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 1
+            suggestedContent: !<regular>
+              value: 1
+            valueType: "java.lang.Long"
+            uuid: "getSubscriber_long1"
+            fixed: false
+            equalsMethodPresent: false
+            explicitCastNeeded: false
+        signature: "findById(Long): Optional"
+        returnValue:
+          sapientType: "OPTIONAL"
+          content: !<optional>
+            value:
+              sapientType: "NULL"
+              valueType: "by.leverx.model.SubscriberEntity"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+            target: "java.util.Optional"
+          valueType: "java.util.Optional"
+          genericValueType: "by.leverx.model.SubscriberEntity"
+          uuid: "getSubscriber_optional1"
+          fixed: false
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1025
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "RESULT"
+      name: "result"
+      index: 4
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "EXCEPTION"
+        content: !<new>
+          target: "java.lang.RuntimeException"
+          parameters:
+          - name: "message"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "Subscriber with id 1 is not found"
+              suggestedContent: !<regular>
+                value: "Subscriber with id 1 is not found"
+              valueType: "java.lang.String"
+              uuid: "getSubscriber_string2"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        suggestedContent: !<new>
+          target: "java.lang.RuntimeException"
+          parameters:
+          - name: "message"
+            value:
+              sapientType: "BASIC"
+              suggestedContent: !<regular>
+                value: "Subscriber with id 1 is not found"
+              valueType: "java.lang.String"
+              uuid: "getSubscriber_string2"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "java.lang.RuntimeException"
+        uuid: "getSubscriber_runtimeException1"
+        fixed: true
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    uuid: "313a1006-0c0a-3667-a120-a0d81eb1e634"
+    deleted: false
+    disabled: false
+    ignoredBySystem: false
+    lastExecutionStatus: "PASSED"
+- method:
+    name: "getAllSubscribers"
+    returnType: "java.util.List"
+    signature: "getAllSubscribers() : java.util.List<by.leverx.model.SubscriberEntity>"
+    instructionFingerprint: "67993B421ECC2C8001D046F70F01A23D"
+    parametersTypes: []
+  paths:
+  - pathId: "path1"
+    pathIdForUser: "path1"
+    testPathName: "getAllSubscribersTest"
+    nameDefinedByUser: false
+    constructorSignature: "<init>(by.leverx.repository.SubscriberRepository) : void"
+    priorityDefinedByUser: false
+    filledByUser: false
+    priority: "LOW"
+    modelFingerprint: "F09EBD6E63EC1467B31B1117CE220448"
+    problemWasSolvedByProver: false
+    truncated: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "5E5340B40EEEB5CF6F441CBF593F91E5"
+      index: 1
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.service.impl.SubscriberServiceImpl"
+          parameters:
+          - name: "repository"
+            value:
+              sapientType: "MOCK"
+              valueType: "by.leverx.repository.SubscriberRepository"
+              uuid: "<init>_subscriberRepository1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "by.leverx.service.impl.SubscriberServiceImpl"
+        uuid: "target"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "FIELD"
+      name: "repository"
+      modelFingerprint: "5587DCBC59B8D34E6AA2491253FB81B4"
+      index: 2
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.repository.SubscriberRepository"
+        uuid: "<init>_subscriberRepository1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "this.repository"
+        name: "findAll"
+        parameters: []
+        signature: "findAll(): Iterable"
+        returnValue:
+          sapientType: "MOCK"
+          valueType: "java.lang.Iterable"
+          uuid: "getAllSubscribers_iterable1"
+          fixed: false
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1025
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "10AE9FC7D453B0DD525D0EDF2EDE7961"
+      index: 3
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "COLLECTION"
+        content: !<collection>
+          collectionClass: "java.util.ArrayList"
+          parameters: []
+          values: []
+        suggestedContent: !<collection>
+          collectionClass: "java.util.ArrayList"
+          parameters: []
+          values: []
+        valueType: "java.util.ArrayList"
+        genericValueType: "by.leverx.model.SubscriberEntity"
+        uuid: "getAllSubscribers_arrayList1"
+        fixed: false
+        equalsMethodPresent: true
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    uuid: "8aa3035e-a923-3c6c-9ad6-5e51ddf2ef80"
+    deleted: false
+    disabled: false
+    ignoredBySystem: false
+    lastExecutionStatus: "PASSED"
+- method:
+    name: "update"
+    returnType: "by.leverx.model.SubscriberEntity"
+    signature: "update(by.leverx.dto.SubscriberDto,java.lang.Long) : by.leverx.model.SubscriberEntity"
+    instructionFingerprint: "58AC5BA3AC68A1F4E829632620BAAD5E"
+    parametersTypes:
+    - "by.leverx.dto.SubscriberDto"
+    - "java.lang.Long"
+  paths:
+  - pathId: "path1"
+    pathIdForUser: "path1"
+    testPathName: "updateWhenByIdIsPresent"
+    nameDefinedByUser: false
+    constructorSignature: "<init>(by.leverx.repository.SubscriberRepository) : void"
+    priorityDefinedByUser: false
+    filledByUser: false
+    priority: "LOW"
+    modelFingerprint: "3291CE3AA71CDBA32B6C0495FFFDC2AD"
+    problemWasSolvedByProver: true
+    truncated: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "5E5340B40EEEB5CF6F441CBF593F91E5"
+      index: 1
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.service.impl.SubscriberServiceImpl"
+          parameters:
+          - name: "repository"
+            value:
+              sapientType: "MOCK"
+              valueType: "by.leverx.repository.SubscriberRepository"
+              uuid: "<init>_subscriberRepository1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "by.leverx.service.impl.SubscriberServiceImpl"
+        uuid: "target"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "INPUT"
+      name: "dto"
+      modelFingerprint: "80239AF2EA8095FBEBF4BF5A12E87B0C"
+      index: 2
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.dto.SubscriberDto"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "name1"
+              valueType: "java.lang.String"
+              uuid: "update_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        suggestedContent: !<new>
+          target: "by.leverx.dto.SubscriberDto"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              valueType: "java.lang.String"
+              uuid: "update_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        valueType: "by.leverx.dto.SubscriberDto"
+        uuid: "update_subscriberDto1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "INPUT"
+      name: "id"
+      modelFingerprint: "C66675FDCB8DECE3D3C375C96E389AB2"
+      index: 3
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "BASIC"
+        content: !<regular>
+          value: 0
+        valueType: "java.lang.Long"
+        uuid: "update_long1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "FIELD"
+      name: "repository"
+      modelFingerprint: "4B73AA05F539696679D2E6E4D456ABAD"
+      index: 4
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.repository.SubscriberRepository"
+        uuid: "<init>_subscriberRepository1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "this.repository"
+        name: "findById"
+        parameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 0
+            valueType: "java.lang.Long"
+            uuid: "update_long1"
+            fixed: false
+            equalsMethodPresent: false
+            explicitCastNeeded: false
+        signature: "findById(Long): Optional"
+        returnValue:
+          sapientType: "OPTIONAL"
+          content: !<optional>
+            value:
+              sapientType: "OBJECT"
+              content: !<new>
+                target: "by.leverx.model.SubscriberEntity"
+                parameters: []
+                privateConstructor: false
+                propertiesMap:
+                  name:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "name1"
+                    valueType: "java.lang.String"
+                    uuid: "update_string1"
+                    fixed: false
+                    equalsMethodPresent: false
+                    explicitCastNeeded: false
+              suggestedContent: !<new>
+                target: "by.leverx.model.SubscriberEntity"
+                parameters: []
+                privateConstructor: false
+                propertiesMap:
+                  name:
+                    sapientType: "BASIC"
+                    valueType: "java.lang.String"
+                    uuid: "update_string1"
+                    fixed: false
+                    equalsMethodPresent: false
+                    explicitCastNeeded: false
+              valueType: "by.leverx.model.SubscriberEntity"
+              uuid: "update_object1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: true
+            target: "java.util.Optional"
+          valueType: "java.util.Optional"
+          genericValueType: "by.leverx.model.SubscriberEntity"
+          uuid: "update_optional1"
+          fixed: false
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1025
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "LOCAL_VARIABLE"
+      name: "dto"
+      modelFingerprint: "3ACE130CAA68700FB85BB6D88E2BE8AE"
+      index: 5
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.dto.SubscriberDto"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "name1"
+              valueType: "java.lang.String"
+              uuid: "update_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        suggestedContent: !<new>
+          target: "by.leverx.dto.SubscriberDto"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              valueType: "java.lang.String"
+              uuid: "update_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        valueType: "by.leverx.dto.SubscriberDto"
+        uuid: "update_subscriberDto1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "dto"
+        name: "getName"
+        parameters: []
+        signature: "getName(): String"
+        returnValue:
+          sapientType: "BASIC"
+          content: !<regular>
+            value: "name1"
+          valueType: "java.lang.String"
+          uuid: "update_string1"
+          fixed: false
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "LOCAL_VARIABLE"
+      name: "subscriberEntity"
+      modelFingerprint: "2AC30B164733160D3EA6AD8C9917C1FB"
+      index: 6
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.model.SubscriberEntity"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "name1"
+              valueType: "java.lang.String"
+              uuid: "update_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        suggestedContent: !<new>
+          target: "by.leverx.model.SubscriberEntity"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              valueType: "java.lang.String"
+              uuid: "update_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        valueType: "by.leverx.model.SubscriberEntity"
+        uuid: "update_object1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: true
+      methodExercised:
+        target: "subscriberEntity"
+        name: "setName"
+        parameters:
+        - name: "name"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "name1"
+            valueType: "java.lang.String"
+            uuid: "update_string1"
+            fixed: false
+            equalsMethodPresent: false
+            explicitCastNeeded: false
+        signature: "setName(String): void"
+        returnValue:
+          sapientType: "VOID"
+          valueType: "void"
+          uuid: "update_void1"
+          fixed: true
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "FIELD"
+      name: "repository"
+      modelFingerprint: "D131C18D7560EC49FBB7F26CB0EE7BEB"
+      index: 7
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.repository.SubscriberRepository"
+        uuid: "<init>_subscriberRepository1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "this.repository"
+        name: "save"
+        parameters:
+        - name: "arg0"
+          value:
+            sapientType: "OBJECT"
+            content: !<new>
+              target: "by.leverx.model.SubscriberEntity"
+              parameters: []
+              privateConstructor: false
+              propertiesMap:
+                name:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "name1"
+                  valueType: "java.lang.String"
+                  uuid: "update_string1"
+                  fixed: false
+                  equalsMethodPresent: false
+                  explicitCastNeeded: false
+            suggestedContent: !<new>
+              target: "by.leverx.model.SubscriberEntity"
+              parameters: []
+              privateConstructor: false
+              propertiesMap:
+                name:
+                  sapientType: "BASIC"
+                  valueType: "java.lang.String"
+                  uuid: "update_string1"
+                  fixed: false
+                  equalsMethodPresent: false
+                  explicitCastNeeded: false
+            valueType: "by.leverx.model.SubscriberEntity"
+            uuid: "update_object1"
+            fixed: false
+            equalsMethodPresent: false
+            explicitCastNeeded: true
+        signature: "save(SubscriberEntity): Object"
+        returnValue:
+          sapientType: "MOCK"
+          valueType: "java.lang.Object"
+          uuid: "update_object2"
+          fixed: false
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1025
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "65127E3AE0ADDF526EBA2AA94A98C765"
+      index: 8
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.model.SubscriberEntity"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "name1"
+              valueType: "java.lang.String"
+              uuid: "update_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        suggestedContent: !<new>
+          target: "by.leverx.model.SubscriberEntity"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              valueType: "java.lang.String"
+              uuid: "update_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        valueType: "by.leverx.model.SubscriberEntity"
+        uuid: "update_object1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: true
+      staticReadMethodForField: false
+      filledByUser: false
+    uuid: "beab4f28-49cd-33ed-96f5-b0df48b7d160"
+    deleted: false
+    disabled: false
+    ignoredBySystem: false
+    lastExecutionStatus: "FAILED"
+  - pathId: "path2"
+    pathIdForUser: "path2"
+    testPathName: "updateWhenByIdNotIsPresentThrowsRuntimeException"
+    nameDefinedByUser: false
+    constructorSignature: "<init>(by.leverx.repository.SubscriberRepository) : void"
+    priorityDefinedByUser: false
+    filledByUser: false
+    priority: "LOW"
+    modelFingerprint: "F787064358072A7922B180A21E3CB416"
+    problemWasSolvedByProver: true
+    truncated: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "5E5340B40EEEB5CF6F441CBF593F91E5"
+      index: 1
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.service.impl.SubscriberServiceImpl"
+          parameters:
+          - name: "repository"
+            value:
+              sapientType: "MOCK"
+              valueType: "by.leverx.repository.SubscriberRepository"
+              uuid: "<init>_subscriberRepository1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "by.leverx.service.impl.SubscriberServiceImpl"
+        uuid: "target"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "INPUT"
+      name: "dto"
+      modelFingerprint: "80239AF2EA8095FBEBF4BF5A12E87B0C"
+      index: 2
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.dto.SubscriberDto"
+        uuid: "update_subscriberDto1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "INPUT"
+      name: "id"
+      modelFingerprint: "C66675FDCB8DECE3D3C375C96E389AB2"
+      index: 3
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "BASIC"
+        content: !<regular>
+          value: 1
+        suggestedContent: !<regular>
+          value: 1
+        valueType: "java.lang.Long"
+        uuid: "update_long1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "FIELD"
+      name: "repository"
+      modelFingerprint: "3499810E51AAA58818F3052BBAD82880"
+      index: 4
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.repository.SubscriberRepository"
+        uuid: "<init>_subscriberRepository1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "this.repository"
+        name: "findById"
+        parameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 1
+            suggestedContent: !<regular>
+              value: 1
+            valueType: "java.lang.Long"
+            uuid: "update_long1"
+            fixed: false
+            equalsMethodPresent: false
+            explicitCastNeeded: false
+        signature: "findById(Long): Optional"
+        returnValue:
+          sapientType: "OPTIONAL"
+          content: !<optional>
+            value:
+              sapientType: "NULL"
+              valueType: "by.leverx.model.SubscriberEntity"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+            target: "java.util.Optional"
+          valueType: "java.util.Optional"
+          genericValueType: "by.leverx.model.SubscriberEntity"
+          uuid: "update_optional1"
+          fixed: false
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1025
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "RESULT"
+      name: "result"
+      index: 5
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "EXCEPTION"
+        content: !<new>
+          target: "java.lang.RuntimeException"
+          parameters:
+          - name: "message"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "Subscriber with id 1 is not found"
+              suggestedContent: !<regular>
+                value: "Subscriber with id 1 is not found"
+              valueType: "java.lang.String"
+              uuid: "update_string2"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        suggestedContent: !<new>
+          target: "java.lang.RuntimeException"
+          parameters:
+          - name: "message"
+            value:
+              sapientType: "BASIC"
+              suggestedContent: !<regular>
+                value: "Subscriber with id 1 is not found"
+              valueType: "java.lang.String"
+              uuid: "update_string2"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "java.lang.RuntimeException"
+        uuid: "update_runtimeException1"
+        fixed: true
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    uuid: "6fc923fe-2fae-3a95-b9d9-f8eac74b530a"
+    deleted: false
+    disabled: false
+    ignoredBySystem: false
+    lastExecutionStatus: "PASSED"
+- method:
+    name: "delete"
+    returnType: "void"
+    signature: "delete(java.lang.Long) : void"
+    instructionFingerprint: "C1C27FF1B13A7926B53B9E45BBF6E4BB"
+    parametersTypes:
+    - "java.lang.Long"
+  paths:
+  - pathId: "path1"
+    pathIdForUser: "path1"
+    testPathName: "deleteWhenByIdIsPresentThrowsRuntimeException"
+    nameDefinedByUser: false
+    constructorSignature: "<init>(by.leverx.repository.SubscriberRepository) : void"
+    priorityDefinedByUser: false
+    filledByUser: false
+    priority: "LOW"
+    modelFingerprint: "32B7850A7D6FEEE707C9A78BFEF84474"
+    problemWasSolvedByProver: true
+    truncated: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "5E5340B40EEEB5CF6F441CBF593F91E5"
+      index: 1
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.service.impl.SubscriberServiceImpl"
+          parameters:
+          - name: "repository"
+            value:
+              sapientType: "MOCK"
+              valueType: "by.leverx.repository.SubscriberRepository"
+              uuid: "<init>_subscriberRepository1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "by.leverx.service.impl.SubscriberServiceImpl"
+        uuid: "target"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "INPUT"
+      name: "id"
+      modelFingerprint: "C66675FDCB8DECE3D3C375C96E389AB2"
+      index: 2
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "BASIC"
+        content: !<regular>
+          value: 1
+        suggestedContent: !<regular>
+          value: 1
+        valueType: "java.lang.Long"
+        uuid: "delete_long1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "FIELD"
+      name: "repository"
+      modelFingerprint: "2F38B6801BD3D242F2ACAD64E765BB98"
+      index: 3
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.repository.SubscriberRepository"
+        uuid: "<init>_subscriberRepository1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "this.repository"
+        name: "findById"
+        parameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 1
+            suggestedContent: !<regular>
+              value: 1
+            valueType: "java.lang.Long"
+            uuid: "delete_long1"
+            fixed: false
+            equalsMethodPresent: false
+            explicitCastNeeded: false
+        signature: "findById(Long): Optional"
+        returnValue:
+          sapientType: "OPTIONAL"
+          content: !<optional>
+            value:
+              sapientType: "MOCK"
+              valueType: "by.leverx.model.SubscriberEntity"
+              uuid: "delete_object1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: true
+            target: "java.util.Optional"
+          valueType: "java.util.Optional"
+          genericValueType: "by.leverx.model.SubscriberEntity"
+          uuid: "delete_optional1"
+          fixed: false
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1025
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "FIELD"
+      name: "repository"
+      modelFingerprint: "E8495568C300F722501D193AAE635247"
+      index: 4
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.repository.SubscriberRepository"
+        uuid: "<init>_subscriberRepository1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "this.repository"
+        name: "delete"
+        parameters:
+        - name: "arg0"
+          value:
+            sapientType: "MOCK"
+            valueType: "by.leverx.model.SubscriberEntity"
+            uuid: "delete_object1"
+            fixed: false
+            equalsMethodPresent: false
+            explicitCastNeeded: true
+        signature: "delete(SubscriberEntity): void"
+        returnValue:
+          sapientType: "VOID"
+          valueType: "void"
+          uuid: "delete_void1"
+          fixed: true
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1025
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "RESULT"
+      name: "result"
+      index: 5
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "EXCEPTION"
+        content: !<new>
+          target: "java.lang.RuntimeException"
+          parameters:
+          - name: "message"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "Subscriber with id 1 is not found"
+              suggestedContent: !<regular>
+                value: "Subscriber with id 1 is not found"
+              valueType: "java.lang.String"
+              uuid: "delete_string2"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        suggestedContent: !<new>
+          target: "java.lang.RuntimeException"
+          parameters:
+          - name: "message"
+            value:
+              sapientType: "BASIC"
+              suggestedContent: !<regular>
+                value: "Subscriber with id 1 is not found"
+              valueType: "java.lang.String"
+              uuid: "delete_string2"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "java.lang.RuntimeException"
+        uuid: "delete_runtimeException1"
+        fixed: true
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    uuid: "534c6a9f-4c6b-3589-b8e4-e3f03994c1aa"
+    deleted: false
+    disabled: false
+    ignoredBySystem: false
+    lastExecutionStatus: "PASSED"
+  - pathId: "path2"
+    pathIdForUser: "path2"
+    testPathName: "deleteWhenByIdNotIsPresentThrowsRuntimeException"
+    nameDefinedByUser: false
+    constructorSignature: "<init>(by.leverx.repository.SubscriberRepository) : void"
+    priorityDefinedByUser: false
+    filledByUser: false
+    priority: "LOW"
+    modelFingerprint: "C74114D391404613002D9E6710414962"
+    problemWasSolvedByProver: true
+    truncated: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "5E5340B40EEEB5CF6F441CBF593F91E5"
+      index: 1
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.service.impl.SubscriberServiceImpl"
+          parameters:
+          - name: "repository"
+            value:
+              sapientType: "MOCK"
+              valueType: "by.leverx.repository.SubscriberRepository"
+              uuid: "<init>_subscriberRepository1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "by.leverx.service.impl.SubscriberServiceImpl"
+        uuid: "target"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "INPUT"
+      name: "id"
+      modelFingerprint: "C66675FDCB8DECE3D3C375C96E389AB2"
+      index: 2
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "BASIC"
+        content: !<regular>
+          value: 1
+        suggestedContent: !<regular>
+          value: 1
+        valueType: "java.lang.Long"
+        uuid: "delete_long1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "FIELD"
+      name: "repository"
+      modelFingerprint: "3499810E51AAA58818F3052BBAD82880"
+      index: 3
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.repository.SubscriberRepository"
+        uuid: "<init>_subscriberRepository1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "this.repository"
+        name: "findById"
+        parameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 1
+            suggestedContent: !<regular>
+              value: 1
+            valueType: "java.lang.Long"
+            uuid: "delete_long1"
+            fixed: false
+            equalsMethodPresent: false
+            explicitCastNeeded: false
+        signature: "findById(Long): Optional"
+        returnValue:
+          sapientType: "OPTIONAL"
+          content: !<optional>
+            value:
+              sapientType: "NULL"
+              valueType: "by.leverx.model.SubscriberEntity"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+            target: "java.util.Optional"
+          valueType: "java.util.Optional"
+          genericValueType: "by.leverx.model.SubscriberEntity"
+          uuid: "delete_optional1"
+          fixed: false
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1025
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "RESULT"
+      name: "result"
+      index: 4
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "EXCEPTION"
+        content: !<new>
+          target: "java.lang.RuntimeException"
+          parameters:
+          - name: "message"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "Subscriber with id 1 is not found"
+              suggestedContent: !<regular>
+                value: "Subscriber with id 1 is not found"
+              valueType: "java.lang.String"
+              uuid: "delete_string2"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        suggestedContent: !<new>
+          target: "java.lang.RuntimeException"
+          parameters:
+          - name: "message"
+            value:
+              sapientType: "BASIC"
+              suggestedContent: !<regular>
+                value: "Subscriber with id 1 is not found"
+              valueType: "java.lang.String"
+              uuid: "delete_string2"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "java.lang.RuntimeException"
+        uuid: "delete_runtimeException1"
+        fixed: true
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    uuid: "01ebf928-1790-39bd-8d04-7fd4b3ab9ac3"
+    deleted: false
+    disabled: false
+    ignoredBySystem: true
+- method:
+    name: "create"
+    returnType: "by.leverx.model.SubscriberEntity"
+    signature: "create(by.leverx.dto.SubscriberDto) : by.leverx.model.SubscriberEntity"
+    instructionFingerprint: "7C6E08B77D07F63C3139C9B012974885"
+    parametersTypes:
+    - "by.leverx.dto.SubscriberDto"
+  paths:
+  - pathId: "path1"
+    pathIdForUser: "path1"
+    testPathName: "createTest"
+    nameDefinedByUser: false
+    constructorSignature: "<init>(by.leverx.repository.SubscriberRepository) : void"
+    priorityDefinedByUser: false
+    filledByUser: false
+    priority: "LOW"
+    modelFingerprint: "8B84D9CB5EC5015C926084422E2640B5"
+    problemWasSolvedByProver: true
+    truncated: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "5E5340B40EEEB5CF6F441CBF593F91E5"
+      index: 1
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.service.impl.SubscriberServiceImpl"
+          parameters:
+          - name: "repository"
+            value:
+              sapientType: "MOCK"
+              valueType: "by.leverx.repository.SubscriberRepository"
+              uuid: "<init>_subscriberRepository1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "by.leverx.service.impl.SubscriberServiceImpl"
+        uuid: "target"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "INPUT"
+      name: "dto"
+      modelFingerprint: "80239AF2EA8095FBEBF4BF5A12E87B0C"
+      index: 2
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.dto.SubscriberDto"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "name1"
+              valueType: "java.lang.String"
+              uuid: "create_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        suggestedContent: !<new>
+          target: "by.leverx.dto.SubscriberDto"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              valueType: "java.lang.String"
+              uuid: "create_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        valueType: "by.leverx.dto.SubscriberDto"
+        uuid: "create_subscriberDto1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "LOCAL_VARIABLE"
+      name: "dto"
+      modelFingerprint: "3ACE130CAA68700FB85BB6D88E2BE8AE"
+      index: 3
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.dto.SubscriberDto"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "name1"
+              valueType: "java.lang.String"
+              uuid: "create_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        suggestedContent: !<new>
+          target: "by.leverx.dto.SubscriberDto"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              valueType: "java.lang.String"
+              uuid: "create_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        valueType: "by.leverx.dto.SubscriberDto"
+        uuid: "create_subscriberDto1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "dto"
+        name: "getName"
+        parameters: []
+        signature: "getName(): String"
+        returnValue:
+          sapientType: "BASIC"
+          content: !<regular>
+            value: "name1"
+          valueType: "java.lang.String"
+          uuid: "create_string1"
+          fixed: false
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "FIELD"
+      name: "repository"
+      modelFingerprint: "768F8F800984E8B24C47FC41233DD446"
+      index: 4
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "by.leverx.repository.SubscriberRepository"
+        uuid: "<init>_subscriberRepository1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      methodExercised:
+        target: "this.repository"
+        name: "save"
+        parameters:
+        - name: "arg0"
+          value:
+            sapientType: "OBJECT"
+            content: !<new>
+              target: "by.leverx.model.SubscriberEntity"
+              parameters: []
+              privateConstructor: false
+              propertiesMap:
+                name:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "name1"
+                  valueType: "java.lang.String"
+                  uuid: "create_string1"
+                  fixed: false
+                  equalsMethodPresent: false
+                  explicitCastNeeded: false
+            suggestedContent: !<new>
+              target: "by.leverx.model.SubscriberEntity"
+              parameters: []
+              privateConstructor: false
+              propertiesMap:
+                name:
+                  sapientType: "BASIC"
+                  valueType: "java.lang.String"
+                  uuid: "create_string1"
+                  fixed: false
+                  equalsMethodPresent: false
+                  explicitCastNeeded: false
+            valueType: "by.leverx.model.SubscriberEntity"
+            uuid: "create_subscriberEntity1"
+            fixed: true
+            equalsMethodPresent: false
+            explicitCastNeeded: false
+        signature: "save(SubscriberEntity): Object"
+        returnValue:
+          sapientType: "MOCK"
+          valueType: "java.lang.Object"
+          uuid: "create_object1"
+          fixed: false
+          equalsMethodPresent: false
+          explicitCastNeeded: false
+        access: 1025
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "F5E638CC78DD325906C1298A0C21FB6B"
+      index: 5
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.model.SubscriberEntity"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "name1"
+              valueType: "java.lang.String"
+              uuid: "create_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        suggestedContent: !<new>
+          target: "by.leverx.model.SubscriberEntity"
+          parameters: []
+          privateConstructor: false
+          propertiesMap:
+            name:
+              sapientType: "BASIC"
+              valueType: "java.lang.String"
+              uuid: "create_string1"
+              fixed: false
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+        valueType: "by.leverx.model.SubscriberEntity"
+        uuid: "create_subscriberEntity1"
+        fixed: true
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    uuid: "2284fc3d-473b-3992-886d-8fe431bd702d"
+    deleted: false
+    disabled: false
+    ignoredBySystem: false

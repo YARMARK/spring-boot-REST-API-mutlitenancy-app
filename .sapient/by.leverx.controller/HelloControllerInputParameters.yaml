@@ -1,0 +1,125 @@
+---
+modelFingerprint: "2960114A8DBDFD7AD924D1B9BA3EBBCD"
+methods:
+- method:
+    name: "readAll"
+    returnType: "org.springframework.http.ResponseEntity"
+    signature: "readAll(com.sap.cloud.security.xsuaa.token.Token) : org.springframework.http.ResponseEntity<java.lang.String>"
+    instructionFingerprint: "DF24CDE8E44FAF7ACAC1EC99D290EFBA"
+    parametersTypes:
+    - "com.sap.cloud.security.xsuaa.token.Token"
+  paths:
+  - pathId: "path1"
+    pathIdForUser: "path1"
+    testPathName: "readAllTest"
+    nameDefinedByUser: false
+    constructorSignature: "<init>() : void"
+    priorityDefinedByUser: false
+    filledByUser: false
+    priority: "LOW"
+    modelFingerprint: "D788B15363468F8CCB588449F2FB5ADE"
+    problemWasSolvedByProver: true
+    truncated: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "BCD8B0C2EB1FCE714EAB6CEF0D771ACC"
+      index: 1
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "by.leverx.controller.HelloController"
+          parameters: []
+          privateConstructor: false
+        valueType: "by.leverx.controller.HelloController"
+        uuid: "target"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "INPUT"
+      name: "token"
+      modelFingerprint: "4C510ACDB35427C9B7AD1EAA481A04A3"
+      index: 2
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "MOCK"
+        valueType: "com.sap.cloud.security.xsuaa.token.Token"
+        uuid: "readAll_token1"
+        fixed: false
+        equalsMethodPresent: false
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "B6D8D891E649B062DF2BF6B127DE38FD"
+      index: 3
+      ignored: false
+      nestedInLoop: false
+      nestedInRecursion: false
+      value:
+        sapientType: "OBJECT"
+        content: !<new>
+          target: "org.springframework.http.ResponseEntity"
+          parameters:
+          - name: "body"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "Hello World!"
+              valueType: "java.lang.String"
+              fixed: true
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          - name: "status"
+            value:
+              sapientType: "ENUM"
+              content: !<regular>
+                value: "OK"
+              valueType: "org.springframework.http.HttpStatus"
+              uuid: "Enum-org.springframework.http.HttpStatus-OK"
+              fixed: true
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        suggestedContent: !<new>
+          target: "org.springframework.http.ResponseEntity"
+          parameters:
+          - name: "body"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "Hello World!"
+              valueType: "java.lang.String"
+              fixed: true
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          - name: "status"
+            value:
+              sapientType: "ENUM"
+              content: !<regular>
+                value: "OK"
+              valueType: "org.springframework.http.HttpStatus"
+              uuid: "Enum-org.springframework.http.HttpStatus-OK"
+              fixed: true
+              equalsMethodPresent: false
+              explicitCastNeeded: false
+          privateConstructor: false
+        valueType: "org.springframework.http.ResponseEntity"
+        genericValueType: "java.lang.String"
+        uuid: "readAll_responseEntity1"
+        fixed: true
+        equalsMethodPresent: true
+        explicitCastNeeded: false
+      staticReadMethodForField: false
+      filledByUser: false
+    uuid: "8890445a-234c-3aae-b695-b846d81358c6"
+    deleted: false
+    disabled: false
+    ignoredBySystem: false

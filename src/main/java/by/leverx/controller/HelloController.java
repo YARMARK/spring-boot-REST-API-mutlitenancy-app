@@ -18,9 +18,6 @@ public class HelloController {
 
   @GetMapping(path = "")
   public ResponseEntity<String> readAll(@AuthenticationPrincipal Token token) {
-//    if (!token.getAuthorities().contains(new SimpleGrantedAuthority("Display"))) {
-//      throw new NoAuthorizedException("This operation requires \"Display\" scope");
-//    }
     logger.info("HELLO-CONTROLLER");
     return new ResponseEntity<String>("Hello World!", HttpStatus.OK);
   }

@@ -7,7 +7,6 @@ import by.leverx.service.SubscriberService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,9 +51,7 @@ public class SubscriberServiceImpl implements SubscriberService {
   @Override
   public void delete(Long id) {
     Optional<SubscriberEntity> byId = repository.findById(id);
-    if (byId.isPresent()){
-      repository.delete(byId.get());
-    }
+    byId.ifPresent(subscriberEntity -> repository.delete(subscriberEntity));
     throw new RuntimeException(String.format("Subscriber with id %s is not found", id.toString()));
   }
 

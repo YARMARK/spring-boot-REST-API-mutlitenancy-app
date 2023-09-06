@@ -36,7 +36,6 @@ public class DefaultTenantProvisioningService implements TenantProvisioningServi
   @Override
   public void subscribeTenant(final String tenantId) {
     logger.info("TENANT SUB SERVICE {}", tenantId);
-    String defaultSchemaName;
     try {
       Validate.isTrue(isValidTenantId(tenantId),
           String.format("Invalid tenant id: \"%s\"", tenantId));

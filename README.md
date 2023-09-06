@@ -76,7 +76,7 @@ Foundry Platform.
 
 1. Create config.json for Saas-registry:
 
-```
+ ```
    {
    "xsappname":"application",
    "appUrls": {
@@ -257,6 +257,7 @@ If you already had previously deployed services and applications, clean them up 
 * Deploy the MTA:
 
 > cd "path_tp_mta"
+
 > cf deploy ./
 
 * To check the application, execute:
