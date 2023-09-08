@@ -7,7 +7,10 @@ Foundry Platform.
 
 ## Project details
 
-* [Guide to developing cloud applications using SAP Cloud Platform and Cloud Foundry.](https://habr.com/ru/companies/sap/articles/350690/)
+* [Guide to developing cloud applications using SAP Cloud Platform and Cloud Foundry.](https://habr.com/ru/companies/sap/articles/350690/)\
+* JDK - Sapmachine 11.0.20
+* Node v18.17.0
+* Npm v9.6.7
 * Spring-Boot Crud operations
 * Deployment on Cloud Foundry (SAP BTP)
 * O-Auth 2.0 protocol (XSUAA service)
@@ -274,5 +277,6 @@ If you already had previously deployed services and applications, clean them up 
 
 ## Helpful Links
 
+* [Sapient AI - plugin for generation tests](https://plugins.jetbrains.com/plugin/21709-sapient-ai-test-coder/features)
 * [Fundamentals of Multitenancy in SAP BTP](https://blogs.sap.com/2022/08/27/fundamentals-of-multitenancy-in-sap-btp/)
 * [SAP BTP – Security – OAuth 2.0 – Understanding Token Exchange](https://blogs.sap.com/2022/02/22/sap-btp-security-oauth-2.0-understanding-token-exchange/)
