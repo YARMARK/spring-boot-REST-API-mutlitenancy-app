@@ -116,7 +116,7 @@ Foundry Platform.
 5.Create Rout for consumer subaccount:
 
 * cf map-route <aprouter_name> cfapps.us10-001.hana.ondemand.com --hostname
-  consumer-tenant-ap25-approuter-product-list-ap25
+  <tenante-account-subdomine>
 
 </details> 
 
